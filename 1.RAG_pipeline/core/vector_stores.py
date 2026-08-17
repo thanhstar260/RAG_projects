@@ -27,7 +27,7 @@ def get_vector_store(embeddings, db_type=DEFAULT_VECTOR_DB, docs=None):
             
     elif db_type == "QDRANT":
         if docs:
-            return Qdrant.from_documents(docs, embeddings, path=persist_dir, collection_name="rag_collection")
+            return Qdrant.from_documents(docs, embeddings, path=persist_dir, collection_name="rag_collection", force_recreate=True)
         else:
             from qdrant_client import QdrantClient
             client = QdrantClient(path=persist_dir)
