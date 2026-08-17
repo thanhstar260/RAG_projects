@@ -1,13 +1,17 @@
 import sys
 import os
 
-# Thêm BASE_DIR vào sys.path để Python hiểu được các module core, config
+os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
+
+# Thêm BASE_DIR vào sys.path để Python hiểu được các module core, configs
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from core.document_loader import load_and_split_documents
 from core.embeddings import get_embedding_model
 from core.vector_stores import get_vector_store
 from config import DEFAULT_VECTOR_DB, DEFAULT_EMBEDDING
+
+
 
 def run_ingestion():
     print("=== BẮT ĐẦU QUÁ TRÌNH NẠP DỮ LIỆU (INGESTION) ===")

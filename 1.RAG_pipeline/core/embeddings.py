@@ -12,12 +12,12 @@ def get_embedding_model(model_name=DEFAULT_EMBEDDING):
     model_kwargs = {
         'device': 'cpu', 
         'trust_remote_code': True,
-        'cache_folder': MODELS_DIR  # <--- Bắt buộc model tải về đây
     }
     encode_kwargs = {'normalize_embeddings': True}
     
     embeddings = HuggingFaceEmbeddings(
         model_name=model_id,
+        cache_folder=MODELS_DIR, # <--- Bắt buộc model tải về đây
         model_kwargs=model_kwargs,
         encode_kwargs=encode_kwargs
     )
