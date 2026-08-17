@@ -1,0 +1,19 @@
+# Bỏ qua Môi trường ảo
+.venv/
+venv/
+env/
+
+# Bỏ qua API Keys (Cực kỳ quan trọng)
+.env
+
+# Bỏ qua Data, Database, History và Model (Vì chúng nặng và là dữ liệu cá nhân)
+data/
+db/
+chat_history/
+models/
+
+# Bỏ qua các file rác của Python và Mac/Windows
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
